@@ -1,0 +1,15 @@
+<%= form model: item do |form| %>
+  <p class="error"><%= form.object.errors.full_messages.first %></p>
+<% end %>
+
+<%= form_with model: @item do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
