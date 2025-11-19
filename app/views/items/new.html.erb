@@ -2,16 +2,5 @@
 
 <h1>Ilmoita uudesta tavarasta</h1>
 
-<%= form_with model: @item do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-
-<% end %>
-
+<%= render "form", item: @item %>
 <%= link_to "Cancel", items_path %>

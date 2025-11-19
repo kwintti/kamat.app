@@ -1,6 +1,8 @@
 <%# app/views/items/show.html.erb %>
 <h1><%= @item.name %></h1>
 
-<%= link_to "Back", items_path %>
+<%= link_to "Muokkaa", edit_item_path(@item) %>
+<%= link_to "Takaisin", items_path %>
+<%= button_to "Poista", @item, method: :delete, data: { turbo_confirm: "Oletko varma?" } %>
 
 
