@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-   before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :set_item, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access only: %i[ index show ]
   
   def index
     @items = Item.all
@@ -43,6 +44,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.expect(item: [ :name ])
+      params.expect(item: [ :name, :description ])
     end
 end

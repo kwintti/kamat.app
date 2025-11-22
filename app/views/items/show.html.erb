@@ -1,8 +1,12 @@
 <%# app/views/items/show.html.erb %>
-<h1><%= @item.name %></h1>
+<% cache @item do %>
+  <h1><%= @item.name %></h1>
+  <% @item.description %>
+<% end %>
 
-<%= link_to "Muokkaa", edit_item_path(@item) %>
+<% if authenticated? %>
+  <%= link_to "Muokkaa", edit_item_path(@item) %>
+  <%= button_to "Poista", @item, method: :delete, data: { turbo_confirm: "Oletko varma?" } %>
+<% end %>
+
 <%= link_to "Takaisin", items_path %>
-<%= button_to "Poista", @item, method: :delete, data: { turbo_confirm: "Oletko varma?" } %>
-
-

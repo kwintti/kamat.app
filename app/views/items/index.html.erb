@@ -1,13 +1,15 @@
 <%# app/views/items/index.html.erb %>
-<h1>Items</h1>
+<h1 class="text-xl font-semibold text-blue-800 mb-4">Items</h1>
 
-<%= link_to "Ilmoita tavarasta", new_item_path %>
+<%= link_to "Ilmoita tavarasta", new_item_path if authenticated? %>
+<%= link_to "Kirjaudu sisään", new_session_path unless authenticated? %>
 
-
+<ul class="space-y-2">
 <div id="items">
   <% @items.each do |item| %>
-    <div>
+    <li class="bg-white p-4 shadow rounded flex items-center justify-between">
         <%= link_to item.name, item_path(item.id) %>
-    </div>
+    </li>
   <% end %>
 </div>
+</ul>
