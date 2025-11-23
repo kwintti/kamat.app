@@ -44,6 +44,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.expect(item: [ :name, :description ])
+      params.expect(item: [ :name, :description, :featured_image ])
     end
 end

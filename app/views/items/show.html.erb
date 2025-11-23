@@ -1,4 +1,5 @@
 <%# app/views/items/show.html.erb %>
+<%= image_tag @item.featured_image if @item.featured_image.attached? %>
 <% cache @item do %>
   <h1><%= @item.name %></h1>
   <% @item.description %>
