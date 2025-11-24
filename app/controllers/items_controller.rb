@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
   allow_unauthenticated_access only: %i[ index show ]
-  
+
   def index
     @items = Item.all
   end
@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def new 
+  def new
     @item = Item.new
   end
 
