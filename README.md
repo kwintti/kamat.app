@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kamat.app - Etsivä löytää!
 
-Things you may want to cover:
+Tämän apin avulla löydettäessä luonnosta käyttötavaran - pystyt nappamaan kuvan ja tekemään siitä ilmoituksen. Tällöin omistaja saa tilaisuuden hakea oman tavaran pois luonnosta.
 
-* Ruby version
 
-* System dependencies
+<h2>Ominaisuudet:</h2>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Kuvan otto ja lyhyt kuvaus
+- Käyttäjätunnukset
+- 
