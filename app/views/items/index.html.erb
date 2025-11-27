@@ -3,39 +3,29 @@
   <h3 class="text-base font-semibold text-gray-900 dark:text-white">Items</h3>
 </div>
 
-<%= link_to "Ilmoita tavarasta", new_item_path if authenticated? %>
-<%= link_to "Kirjaudu sisään", new_session_path unless authenticated? %>
+<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+  <div class="hidden sm:ml-6 sm:block">
+    <div class="flex space-x-4">
+      <% if authenticated? %>
+        <%= link_to "Ilmoita tavarasta",
+          new_item_path,
+          class:  "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <nav aria-label="Directory" class="h-full overflow-y-auto">
   <div class="relative">
-    <div class="sticky top-0 z-10 border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900 dark:border-t-white/5 dark:border-b-white/10 dark:bg-gray-900 dark:text-white dark:before:pointer-events-none dark:before:absolute dark:before:inset-0 dark:before:bg-white/5">
-      <h3 class="relative">A</h3>
+    <div id="items">
+      <% @items.each do |item| %>
+        <ul role="list" class="divide-y divide-gray-100 dark:divide-white/5">
+          <li class="flex gap-x-4 px-3 py-5">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 dark:outline dark:-outline-offset-1 dark:outline-white/10" />
+            <%= link_to item.name, item_path(item.id) %>
+          </li>
+        </ul>
+      <% end %>
     </div>
-<div id="items">
-  <% @items.each do |item| %>
-    <ul role="list" class="divide-y divide-gray-100 dark:divide-white/5">
-    <li class="flex gap-x-4 px-3 py-5">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 dark:outline dark:-outline-offset-1 dark:outline-white/10" />
-        <%= link_to item.name, item_path(item.id) %>
-        <div class="min-w-0">
-          <p class="text-sm/6 font-semibold text-gray-900 dark:text-white">Hector Adams</p>
-          <p class="mt-1 truncate text-xs/5 text-gray-500 dark:text-gray-400">hector.adams@example.com</p>
-        </div>
-    </li>
-    </ul>
-  <% end %>
-</div>
-<div class="relative">
-  <div class="sticky top-0 z-10 border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900 dark:border-t-white/5 dark:border-b-white/10 dark:bg-gray-900 dark:text-white dark:before:pointer-events-none dark:before:absolute dark:before:inset-0 dark:before:bg-white/5">
-    <h3 class="relative">Y</h3>
   </div>
-  <ul role="list" class="divide-y divide-gray-100 dark:divide-white/5">
-    <li class="flex gap-x-4 px-3 py-5">
-      <img src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-12 flex-none rounded-full bg-gray-50 dark:bg-gray-800 dark:outline dark:-outline-offset-1 dark:outline-white/10" />
-      <div class="min-w-0">
-        <p class="text-sm/6 font-semibold text-gray-900 dark:text-white">Emma Young</p>
-        <p class="mt-1 truncate text-xs/5 text-gray-500 dark:text-gray-400">emma.young@example.com</p>
-      </div>
-    </li>
-  </ul>
-</div>
+</nav>
