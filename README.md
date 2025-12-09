@@ -9,4 +9,5 @@ Tämän apin avulla löydettäessä luonnosta käyttötavaran - pystyt nappamaan
 
 - Kuvan otto ja lyhyt kuvaus
 - Käyttäjätunnukset
-- 
+- Esineen sijainti
+- Kadonneksi ilmoittaminen
