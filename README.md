@@ -11,3 +11,5 @@ Tämän apin avulla löydettäessä luonnosta käyttötavaran - pystyt nappamaan
 - Käyttäjätunnukset
 - Esineen sijainti
 - Kadonneksi ilmoittaminen
+- Kartta
+- Someapit
